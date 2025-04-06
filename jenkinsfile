@@ -1,0 +1,15 @@
+@Library('shared-lib') _
+
+pipeline {
+    agent any
+
+    stages {
+        stage('shared') {
+            steps {
+                script {
+                    gitCheckout()
+                }
+            }
+        }
+    }
+}
