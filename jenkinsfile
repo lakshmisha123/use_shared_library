@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     stages {
-        stage('shared') {
+        stage('Call shared library') {
             steps {
                 script {
                     gitCheckout()
