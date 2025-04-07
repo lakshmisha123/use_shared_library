@@ -2,12 +2,16 @@
 
 pipeline {
     agent any
+    environment {
+        GIT_URL = 'https://github.com/lakshmisha123/use_shared_library.git'
+        GIT_BRANCH = 'main'
+    }
 
     stages {
         stage('Call shared library') {
             steps {
                 script {
-                    gitCheckout()
+                    gitCheckout(env.GIT_BRANCH, env.GIT_CREDENTIALS, env.GIT_URL)
                 }
             }
         }
